@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area",
+"class": "EnemyEngageArea",
+"language": "GDScript",
+"path": "res://enemy_area.gd"
+} ]
+_global_script_class_icons={
+"EnemyEngageArea": ""
+}
+
+[application]
+
+config/name="rpg"
+run/main_scene="res://test_room.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+BattleManager="*res://battle_manager.gd"
+
+[global]
+
+default=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
