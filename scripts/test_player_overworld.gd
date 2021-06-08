@@ -1,13 +1,14 @@
 extends KinematicBody
 
 const WALK_SPEED = 800.0
-
-var battle_scene = preload("res://battle_scene.tscn")
 var input_vec = Vector3.ZERO
-
+onready var battle_agent_status = $battle_status
+export (PackedScene) var battle_agent_scene = null
 signal start_battle
 
+
 func _ready():
+	connect('start_battle', BattleManager, 'on_enter_enemy_engage_area')
 	$Detector.connect('body_entered', self, 'on_Detector_body_entered');
 	$Detector.connect('body_exited', self, 'on_Detector_body_exited')
 	$Detector.connect('area_entered', self, 'on_Detector_area_entered')
@@ -57,7 +58,7 @@ func on_Detector_area_entered(node):
 	if node.is_class('EnemyEngageArea'):
 		if node.is_hostile:
 			print_debug('hostile found')
-			get_tree().change_scene_to(battle_scene)
+			emit_signal('start_battle', node)
 
 
 func on_Detector_area_exited(_node):

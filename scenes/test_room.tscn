@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://test_camera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://test_player_overworld.tscn" type="PackedScene" id=2]
-[ext_resource path="res://test_enemy_overworld.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/test_camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/test_player_overworld.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/test_enemy_overworld.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/test_room.gd" type="Script" id=4]
+[ext_resource path="res://scenes/pc_battle_agent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/test_enemy_battle_agent.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 4, 4 )
@@ -25,6 +28,7 @@ material = SubResource( 5 )
 size = Vector3( 8, 8, 8 )
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 7.79838, 0, 0, 0, 1, 0, 0, 0, 7.79838, 0, 0, 0 )
@@ -32,6 +36,7 @@ mesh = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29997, -4.76837e-07 )
+battle_agent_scene = ExtResource( 5 )
 
 [node name="enemy" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.999999, 0.00106031, -7.88913e-05, -0.00106032, 0.999999, -5.46367e-05, 7.88303e-05, 5.47246e-05, 1, -6.5062, 0.752, -5.78491 )
@@ -99,4 +104,8 @@ shape = SubResource( 4 )
 mesh = SubResource( 6 )
 material/0 = null
 
+[node name="KinematicBody" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.18724 )
+
+[editable path="Player"]
 [editable path="cam_root"]
