@@ -1,0 +1,601 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://enemy_status_panel_style.tres" type="StyleBox" id=1]
+[ext_resource path="res://scripts/battle_hud.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://scripts/pc_attack_container.gd" type="Script" id=4]
+
+[node name="BattleHud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pc_status_panels" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -984.0
+margin_bottom = -560.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pc1_status_panel" type="Panel" parent="pc_status_panels"]
+margin_left = 16.0
+margin_top = 528.0
+margin_right = 208.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 24.0
+text = "Char 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pc1_status_panel2" type="Panel" parent="pc_status_panels"]
+margin_left = 216.0
+margin_top = 528.0
+margin_right = 408.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel2"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 24.0
+text = "Char 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel2"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel2"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pc1_status_panel3" type="Panel" parent="pc_status_panels"]
+margin_left = 416.0
+margin_top = 528.0
+margin_right = 608.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel3"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 112.0
+margin_bottom = 24.0
+text = "Char 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel3"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="pc_status_panels/pc1_status_panel3"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="en_status_panels" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="enemy_status_panel" type="Panel" parent="en_status_panels"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 208.0
+margin_bottom = 72.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="name" type="RichTextLabel" parent="en_status_panels/enemy_status_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 24.0
+text = "Enemy 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy_status_panel2" type="Panel" parent="en_status_panels"]
+margin_left = 216.0
+margin_top = 8.0
+margin_right = 408.0
+margin_bottom = 72.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="name" type="RichTextLabel" parent="en_status_panels/enemy_status_panel2"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 24.0
+text = "Enemy 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel2"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel2"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy_status_panel3" type="Panel" parent="en_status_panels"]
+margin_left = 416.0
+margin_top = 8.0
+margin_right = 608.0
+margin_bottom = 72.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="RichTextLabel" parent="en_status_panels/enemy_status_panel3"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 24.0
+text = "Enemy 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel3"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel3"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy_status_panel4" type="Panel" parent="en_status_panels"]
+margin_left = 616.0
+margin_top = 8.0
+margin_right = 808.0
+margin_bottom = 72.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="name" type="RichTextLabel" parent="en_status_panels/enemy_status_panel4"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 24.0
+text = "Enemy 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel4"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel4"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemy_status_panel5" type="Panel" parent="en_status_panels"]
+margin_left = 816.0
+margin_top = 8.0
+margin_right = 1008.0
+margin_bottom = 72.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="name" type="RichTextLabel" parent="en_status_panels/enemy_status_panel5"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 24.0
+text = "Enemy 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel5"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 184.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "[color=green]HP 99/99"
+text = "HP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cp" type="RichTextLabel" parent="en_status_panels/enemy_status_panel5"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[color=blue]CP 99/99"
+text = "CP 99/99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="action_panel" type="Panel" parent="."]
+margin_left = 24.0
+margin_top = 408.0
+margin_right = 200.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="action_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 168.0
+margin_bottom = 32.0
+text = "Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="action_panel"]
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 168.0
+margin_bottom = 64.0
+text = "Item"
+
+[node name="Button3" type="Button" parent="action_panel"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 168.0
+margin_bottom = 96.0
+text = "Run"
+
+[node name="console_panel" type="Panel" parent="."]
+margin_left = 632.0
+margin_top = 528.0
+margin_right = 1008.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="console_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 376.0
+margin_bottom = 56.0
+bbcode_text = "This is where the battle text will go!"
+text = "This is where the battle text will go!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="attacks_panel" type="Panel" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 208.0
+margin_right = 320.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="attacks_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "Attacks"
+text = "Attacks"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="attacks_panel"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 288.0
+margin_bottom = 264.0
+follow_focus = true
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="attacks_panel/ScrollContainer"]
+margin_right = 260.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 260, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackContainerTemplate" type="HBoxContainer" parent="attacks_panel/ScrollContainer/VBoxContainer"]
+visible = false
+margin_right = 260.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 260, 32 )
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="attacks_panel/ScrollContainer/VBoxContainer/AttackContainerTemplate"]
+margin_right = 260.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+button_mask = 3
+text = "Attack name"
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="Button" type="Button" parent="attacks_panel"]
+margin_left = 8.0
+margin_top = 272.0
+margin_right = 56.0
+margin_bottom = 292.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="items_panel" type="Panel" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 208.0
+margin_right = 320.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="items_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 24.0
+bbcode_enabled = true
+bbcode_text = "Items"
+text = "Items"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="items_panel"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 288.0
+margin_bottom = 288.0
+follow_focus = true
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="items_panel/ScrollContainer"]
+margin_right = 260.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 260, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackContainerTemplate" type="HBoxContainer" parent="items_panel/ScrollContainer/VBoxContainer"]
+visible = false
+margin_right = 260.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 260, 32 )
+
+[node name="Button" type="Button" parent="items_panel/ScrollContainer/VBoxContainer/AttackContainerTemplate"]
+visible = false
+margin_right = 260.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+button_mask = 3
+text = "Attack name"
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="Button" type="Button" parent="items_panel"]
+margin_left = 8.0
+margin_top = 272.0
+margin_right = 56.0
+margin_bottom = 292.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="cancel_panel" type="Panel" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 472.0
+margin_right = 128.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="cancel_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 32.0
+text = "Cancel"
+
+[node name="confirm_panel" type="Panel" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 424.0
+margin_right = 128.0
+margin_bottom = 464.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="confirm_panel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 32.0
+text = "Confirm"

@@ -9,24 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "ENBattleAgent",
+"language": "GDScript",
+"path": "res://scripts/en_battle_agent.gd"
+}, {
 "base": "Area",
 "class": "EnemyEngageArea",
 "language": "GDScript",
-"path": "res://enemy_area.gd"
+"path": "res://scripts/enemy_engage_area.gd"
+}, {
+"base": "Spatial",
+"class": "PCBattleAgent",
+"language": "GDScript",
+"path": "res://scripts/pc_battle_agent.gd"
 } ]
 _global_script_class_icons={
-"EnemyEngageArea": ""
+"ENBattleAgent": "",
+"EnemyEngageArea": "",
+"PCBattleAgent": ""
 }
 
 [application]
 
 config/name="rpg"
-run/main_scene="res://test_room.tscn"
+run/main_scene="res://scenes/test_room.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-BattleManager="*res://battle_manager.gd"
+BattleManager="*res://scripts/battle_manager.gd"
+PlayerManager="*res://scripts/player_manager.gd"
 
 [global]
 
